@@ -1,5 +1,7 @@
 .mvn/timing.properties
 
+.idea
+
 buildNumber.properties
 dependency-reduced-pom.xml
 pom.xml.tag
