@@ -8,4 +8,11 @@
 	<artifactId>katanga-api</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
+	<developers>
+		<developer>
+			<id>mdelapenya</id>
+			<name>Manuel de la Peña</name>
+			<url>https://github.com/mdelapenya</url>
+		</developer>
+	</developers>
 </project>
