@@ -2,6 +2,7 @@ package es.craftsmanship.toledo.katangapp.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 
 /**
@@ -22,7 +23,11 @@ import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 @JsonPropertyOrder(alphabetic = true)
 public class BusStop implements ReferenceablePoint {
 
+	/**
+	 * Public empty constructor for automatic Jackson parsing
+	 */
 	public BusStop() {
+		super();
 	}
 
 	public BusStop(
@@ -114,7 +119,7 @@ public class BusStop implements ReferenceablePoint {
 
 	private String address;
 
-	@JsonIgnore
+	@JsonUnwrapped
 	private Point point;
 
 }
