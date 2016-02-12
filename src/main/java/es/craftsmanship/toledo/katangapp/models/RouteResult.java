@@ -8,6 +8,13 @@ package es.craftsmanship.toledo.katangapp.models;
  */
 public class RouteResult implements Comparable<RouteResult> {
 
+	/**
+	 * Public empty constructor for automatic Jackson parsing
+	 */
+	public RouteResult() {
+		super();
+	}
+
 	public RouteResult(String routeId, long time) {
 		this.idl = routeId;
 		this.time = time;

@@ -17,6 +17,13 @@ import java.util.List;
  */
 public class BusStopResult {
 
+	/**
+	 * Public empty constructor for automatic Jackson parsing
+	 */
+	public BusStopResult() {
+		super();
+	}
+
 	public BusStopResult(
 		double distance, BusStop busStop, List<RouteResult> results) {
 
