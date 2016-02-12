@@ -22,7 +22,11 @@ import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 @JsonPropertyOrder(alphabetic = true)
 public class BusStop implements ReferenceablePoint {
 
+	/**
+	 * Public empty constructor for automatic Jackson parsing
+	 */
 	public BusStop() {
+		super();
 	}
 
 	public BusStop(

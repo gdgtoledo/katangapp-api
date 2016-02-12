@@ -16,6 +16,13 @@ import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 @JsonPropertyOrder(alphabetic = true)
 public class Point implements ReferenceablePoint {
 
+	/**
+	 * Public empty constructor for automatic Jackson parsing
+	 */
+	public Point() {
+		super();
+	}
+
 	public Point(double latitude, double longitude) {
 		this.latitude = latitude;
 		this.longitude = longitude;

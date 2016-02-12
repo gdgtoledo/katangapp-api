@@ -16,6 +16,13 @@ import java.util.List;
  */
 public class QueryResult {
 
+	/**
+	 * Public empty constructor for automatic Jackson parsing
+	 */
+	public QueryResult() {
+		super();
+	}
+
 	public QueryResult(List<BusStopResult> results) {
 		this.results = results;
 	}
