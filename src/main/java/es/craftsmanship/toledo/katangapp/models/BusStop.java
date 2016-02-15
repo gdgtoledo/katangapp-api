@@ -1,8 +1,9 @@
 package es.craftsmanship.toledo.katangapp.models;
 
+import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 
 /**
  * This class represents a bus stop, identified by the route which it belongs,
