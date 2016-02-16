@@ -1,12 +1,14 @@
 package es.craftsmanship.toledo.katangapp.models;
 
+import java.io.Serializable;
+
 /**
  * This class represents the time needed for a bus of a route, identified by the
  * field <code>idl</code>, to arrive to a specific bus stop.
  * 
  * @author mdelapenya
  */
-public class RouteResult implements Comparable<RouteResult> {
+public class RouteResult implements Comparable<RouteResult>, Serializable {
 
 	/**
 	 * Public empty constructor for automatic Jackson parsing

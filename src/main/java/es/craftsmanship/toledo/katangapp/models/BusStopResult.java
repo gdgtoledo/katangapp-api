@@ -2,6 +2,7 @@ package es.craftsmanship.toledo.katangapp.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
  * @see QueryResult
  * @see RouteResult
  */
-public class BusStopResult {
+public class BusStopResult implements Serializable {
 
 	/**
 	 * Public empty constructor for automatic Jackson parsing

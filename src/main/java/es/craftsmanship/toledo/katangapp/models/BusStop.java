@@ -5,6 +5,8 @@ import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
+import java.io.Serializable;
+
 /**
  * This class represents a bus stop, identified by the route which it belongs,
  * the order of the bus stop in the route, its latitude and longitude
@@ -21,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
  * @see Point
  */
 @JsonPropertyOrder(alphabetic = true)
-public class BusStop implements ReferenceablePoint {
+public class BusStop implements ReferenceablePoint, Serializable {
 
 	/**
 	 * Public empty constructor for automatic Jackson parsing

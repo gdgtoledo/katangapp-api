@@ -3,6 +3,8 @@ package es.craftsmanship.toledo.katangapp.models;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 
+import java.io.Serializable;
+
 /**
  * This class represents a point in the surface of the Earth, identified by its
  * latitude and longitude coordinates.
@@ -14,7 +16,7 @@ import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
  * @author mdelapenya
  */
 @JsonPropertyOrder(alphabetic = true)
-public class Point implements ReferenceablePoint {
+public class Point implements ReferenceablePoint, Serializable {
 
 	/**
 	 * Public empty constructor for automatic Jackson parsing
