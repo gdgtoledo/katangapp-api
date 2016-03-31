@@ -1,13 +1,13 @@
 package es.craftsmanship.toledo.katangapp.models;
 
+import static org.fest.assertions.Assertions.assertThat;
+
 import es.craftsmanship.toledo.katangapp.business.DistanceCalculator;
 import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 
 import java.util.Random;
 
 import org.junit.Test;
-
-import static org.fest.assertions.Assertions.assertThat;
 
 /**
  * @author mdelapenya
