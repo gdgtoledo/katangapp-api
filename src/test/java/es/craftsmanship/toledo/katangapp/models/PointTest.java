@@ -1,5 +1,10 @@
 package es.craftsmanship.toledo.katangapp.models;
 
+import es.craftsmanship.toledo.katangapp.business.DistanceCalculator;
+import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
+
+import java.util.Random;
+
 import org.junit.Test;
 
 import static org.fest.assertions.Assertions.assertThat;
@@ -27,6 +32,36 @@ public class PointTest {
 		Point puertaBisagra = TestPointFactory.getPuertaBisagra();
 
 		double distanceTo = puertaBisagra.distanceTo(puertaBisagra);
+
+		assertThat(distanceTo).isEqualTo(0);
+	}
+
+	@Test
+	public void testDistanceToSelfIWillMockStrategy() throws Exception {
+		Point puertaBisagra = TestPointFactory.getPuertaBisagra();
+
+		final double random = new Random().nextDouble();
+
+		double distanceTo = puertaBisagra.distanceTo(
+			puertaBisagra, new DistanceCalculator() {
+
+				@Override
+				public double distance(
+						ReferenceablePoint from, ReferenceablePoint to)
+					throws UnreferenceablePointException {
+
+					return random;
+				}
+		});
+
+		assertThat(distanceTo).isEqualTo(random);
+	}
+
+	@Test
+	public void testDistanceToSelfIWithNullStrategy() throws Exception {
+		Point puertaBisagra = TestPointFactory.getPuertaBisagra();
+
+		double distanceTo = puertaBisagra.distanceTo(puertaBisagra, null);
 
 		assertThat(distanceTo).isEqualTo(0);
 	}

@@ -1,5 +1,6 @@
 package es.craftsmanship.toledo.katangapp.models;
 
+import es.craftsmanship.toledo.katangapp.business.DistanceCalculator;
 import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 
 /**
@@ -8,6 +9,10 @@ import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 public interface ReferenceablePoint {
 
 	double distanceTo(ReferenceablePoint point)
+		throws UnreferenceablePointException;
+
+	double distanceTo(
+			ReferenceablePoint point, DistanceCalculator distanceCalculator)
 		throws UnreferenceablePointException;
 
 	double getLatitude();

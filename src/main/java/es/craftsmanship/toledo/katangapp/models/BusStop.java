@@ -1,9 +1,11 @@
 package es.craftsmanship.toledo.katangapp.models;
 
+import es.craftsmanship.toledo.katangapp.business.DistanceCalculator;
 import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import es.craftsmanship.toledo.katangapp.internal.algorithm.StraightDistanceCalculator;
 
 import java.io.Serializable;
 
@@ -56,7 +58,27 @@ public class BusStop implements ReferenceablePoint, Serializable {
 	public double distanceTo(ReferenceablePoint to)
 		throws UnreferenceablePointException {
 
-		return point.distanceTo(to);
+		return distanceTo(to, new StraightDistanceCalculator());
+	}
+
+	/**
+	 * Delegates the distance calculation to the point, using a strategy for the
+	 * distance calculation.
+	 *
+	 * @param to the Point to calculate the distance
+	 * @param distanceCalculator the Strategy to calculate the distance
+	 *
+	 * @return the distance in meters
+	 *
+	 * @throws UnreferenceablePointException when the <code>to</code> point is
+	 *                                       not referenced or is null.
+	 */
+	@Override
+	public double distanceTo(
+			ReferenceablePoint to, DistanceCalculator distanceCalculator)
+		throws UnreferenceablePointException {
+
+		return point.distanceTo(to, distanceCalculator);
 	}
 
 	public String getAddress() {

@@ -1,6 +1,8 @@
 package es.craftsmanship.toledo.katangapp.models;
 
+import es.craftsmanship.toledo.katangapp.business.DistanceCalculator;
 import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
+import es.craftsmanship.toledo.katangapp.internal.algorithm.StraightDistanceCalculator;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -45,30 +47,30 @@ public class Point implements ReferenceablePoint, Serializable {
 	public double distanceTo(ReferenceablePoint to)
 		throws UnreferenceablePointException {
 
-		if (to == null) {
-			throw new UnreferenceablePointException();
+		return distanceTo(to, new StraightDistanceCalculator());
+	}
+
+	/**
+	 * Calculates the distance from this point to the point passed as argument,
+	 * using the strategy defined by the distanceCalculator algorithm.
+	 *
+	 * @param to
+	 * @param distanceCalculator the Strategy to calculate the distance
+	 *
+	 * @return the distance in meters to the <code>to</code> point.
+	 *
+	 * @throws UnreferenceablePointException when the <code>to</code> point is
+	 *                                       not referenced or is null.
+	 */
+	public double distanceTo(
+			ReferenceablePoint to, DistanceCalculator distanceCalculator)
+		throws UnreferenceablePointException {
+
+		if (distanceCalculator == null) {
+			distanceCalculator = new StraightDistanceCalculator();
 		}
 
-		double latitude1 = this.getLatitude();
-		double longitude1 = this.getLongitude();
-
-		double latitude2 = to.getLatitude();
-		double longitude2 = to.getLongitude();
-
-		double latitudeRadians = Math.toRadians(latitude2 - latitude1);
-
-		double longitudeRadians = Math.toRadians(longitude2 - longitude1);
-
-		double a = Math.sin(latitudeRadians / 2) *
-			Math.sin(latitudeRadians / 2) +
-			Math.cos(Math.toRadians(latitude1)) *
-				Math.cos(Math.toRadians(latitude2)) *
-				Math.sin(longitudeRadians / 2) *
-				Math.sin(longitudeRadians / 2);
-
-		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-
-		return (Constants.EARTH_RADIUS_METERS * c);
+		return distanceCalculator.distance(this, to);
 	}
 
 	@Override
