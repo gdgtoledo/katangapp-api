@@ -28,7 +28,7 @@ public class BusStopResult implements Serializable {
 
 	public BusStopResult(BusStop busStop, List<RouteResult> results) {
 		this.busStop = busStop;
-		this.distance = 0D;
+		this.distance = null;
 		this.results = results;
 	}
 
@@ -56,7 +56,7 @@ public class BusStopResult implements Serializable {
 	 * Distance in meters from the user to the bus stop.
 	 */
 	@JsonProperty("distancia")
-	private double distance;
+	private Double distance;
 
 	@JsonProperty("parada")
 	private BusStop busStop;
