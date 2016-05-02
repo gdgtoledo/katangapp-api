@@ -26,6 +26,12 @@ public class BusStopResult implements Serializable {
 		super();
 	}
 
+	/**
+	 * Represents a favorite bus stop, which we don't want to know the distance
+	 * 
+	 * @param busStop
+	 * @param results
+	 */
 	public BusStopResult(BusStop busStop, List<RouteResult> results) {
 		this.busStop = busStop;
 		this.distance = null;
