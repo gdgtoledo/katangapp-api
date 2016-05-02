@@ -26,12 +26,18 @@ public class BusStopResult implements Serializable {
 		super();
 	}
 
+	public BusStopResult(BusStop busStop, List<RouteResult> results) {
+		this.busStop = busStop;
+		this.distance = 0D;
+		this.results = results;
+	}
+
 	public BusStopResult(
 		double distance, BusStop busStop, List<RouteResult> results) {
 
-		this.busStop = busStop;
+		this(busStop, results);
+
 		this.distance = distance;
-		this.results = results;
 	}
 
 	public BusStop getBusStop() {
