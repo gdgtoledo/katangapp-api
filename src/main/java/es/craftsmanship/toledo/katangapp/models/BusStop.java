@@ -2,12 +2,12 @@ package es.craftsmanship.toledo.katangapp.models;
 
 import es.craftsmanship.toledo.katangapp.business.DistanceCalculator;
 import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
+import es.craftsmanship.toledo.katangapp.internal.algorithm.StraightDistanceCalculator;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import es.craftsmanship.toledo.katangapp.internal.algorithm.StraightDistanceCalculator;
 
 import java.io.Serializable;
 
