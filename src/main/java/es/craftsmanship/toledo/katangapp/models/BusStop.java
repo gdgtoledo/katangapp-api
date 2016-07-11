@@ -3,6 +3,8 @@ package es.craftsmanship.toledo.katangapp.models;
 import es.craftsmanship.toledo.katangapp.business.DistanceCalculator;
 import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import es.craftsmanship.toledo.katangapp.internal.algorithm.StraightDistanceCalculator;
@@ -135,8 +137,10 @@ public class BusStop implements ReferenceablePoint, Serializable {
 		this.routeId = routeId;
 	}
 
+	@JsonInclude(Include.NON_NULL)
 	private String routeId;
 
+	@JsonInclude(Include.NON_NULL)
 	private String order;
 
 	private String id;
