@@ -27,7 +27,8 @@ import java.io.Serializable;
  * @see Point
  */
 @JsonPropertyOrder(alphabetic = true)
-public class BusStop implements ReferenceablePoint, Serializable {
+public class BusStop extends BaseLinkableModel
+	implements ReferenceablePoint, Serializable {
 
 	/**
 	 * Public empty constructor for automatic Jackson parsing
@@ -39,6 +40,8 @@ public class BusStop implements ReferenceablePoint, Serializable {
 	public BusStop(
 		String routeId, String id, String order, double latitude,
 		double longitude, String address) {
+
+		super();
 
 		this.address = address;
 		this.routeId = routeId;
