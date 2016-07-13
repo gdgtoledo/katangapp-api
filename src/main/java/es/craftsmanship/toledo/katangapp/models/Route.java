@@ -19,7 +19,8 @@ public class Route extends BaseLinkableModel implements Serializable {
 	}
 
 	public Route(String id, String name) {
-		this.busStops = Collections.emptyList();
+		this();
+
 		this.id = id;
 		this.name = name;
 	}
