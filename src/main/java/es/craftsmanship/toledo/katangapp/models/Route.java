@@ -10,7 +10,7 @@ import java.util.List;
  * 
  * @author mdelapenya
  */
-public class Route {
+public class Route extends BaseLinkableModel {
 
 	public Route() {
 		this.busStops = Collections.emptyList();
