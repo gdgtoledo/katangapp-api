@@ -41,7 +41,7 @@ public class BusStop extends BaseLinkableModel
 		String routeId, String id, String order, double latitude,
 		double longitude, String address) {
 
-		super();
+		this();
 
 		this.address = address;
 		this.routeId = routeId;
