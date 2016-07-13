@@ -2,10 +2,12 @@ package es.craftsmanship.toledo.katangapp.models;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.io.Serializable;
+
 /**
  * @author mdelapenya
  */
-public class Links {
+public class Links implements Serializable {
 
 	public String getSelf() {
 		return self;

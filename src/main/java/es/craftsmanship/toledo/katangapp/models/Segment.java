@@ -2,6 +2,8 @@ package es.craftsmanship.toledo.katangapp.models;
 
 import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
 
+import java.io.Serializable;
+
 /**
  * This class represent the segment between two points.
  *
@@ -13,7 +15,7 @@ import es.craftsmanship.toledo.katangapp.business.UnreferenceablePointException;
  *
  * @see ReferenceablePoint
  */
-public class Segment implements Comparable<Segment> {
+public class Segment implements Comparable<Segment>, Serializable {
 
 	/**
 	 * Creates the segment object defined by the two points passed in as

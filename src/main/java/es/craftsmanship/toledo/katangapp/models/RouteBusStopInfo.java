@@ -1,9 +1,11 @@
 package es.craftsmanship.toledo.katangapp.models;
 
+import java.io.Serializable;
+
 /**
  * @author mdelapenya
  */
-public class RouteBusStopInfo {
+public class RouteBusStopInfo implements Serializable {
 
 	public RouteBusStopInfo(String routeId, String orderId) {
 		this.orderId = orderId;
