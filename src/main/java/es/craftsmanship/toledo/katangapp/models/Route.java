@@ -1,5 +1,7 @@
 package es.craftsmanship.toledo.katangapp.models;
 
+import java.io.Serializable;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.List;
  * 
  * @author mdelapenya
  */
-public class Route extends BaseLinkableModel {
+public class Route extends BaseLinkableModel implements Serializable {
 
 	public Route() {
 		this.busStops = Collections.emptyList();
