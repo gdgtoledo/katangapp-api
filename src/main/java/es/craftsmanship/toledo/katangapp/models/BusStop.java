@@ -11,6 +11,9 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import java.io.Serializable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This class represents a bus stop, identified by the route which it belongs,
  * the order of the bus stop in the route, its latitude and longitude
@@ -35,6 +38,8 @@ public class BusStop extends BaseLinkableModel
 	 */
 	public BusStop() {
 		super();
+
+		routes = new ArrayList<>();
 	}
 
 	public BusStop(
@@ -116,6 +121,10 @@ public class BusStop extends BaseLinkableModel
 		return point;
 	}
 
+	public List<RouteBusStopInfo> getRoutes() {
+		return routes;
+	}
+
 	@Override
 	public String toString() {
 		return "routeId: " + routeId + ", id: " + id + ", order: " + order +
@@ -140,8 +149,14 @@ public class BusStop extends BaseLinkableModel
 		this.routeId = routeId;
 	}
 
+	public void setRoutes(List<RouteBusStopInfo> routes) {
+		this.routes = routes;
+	}
+
 	@JsonInclude(Include.NON_NULL)
 	private String routeId;
+
+	private List<RouteBusStopInfo> routes;
 
 	@JsonInclude(Include.NON_NULL)
 	private String order;
