@@ -1,5 +1,7 @@
 package es.craftsmanship.toledo.katangapp.models;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
  * @author Manuel de la Peña
  */
@@ -29,6 +31,7 @@ public abstract class BaseLinkableModel implements LinkableModel {
 		links.setSelf(self);
 	}
 
+	@JsonInclude(JsonInclude.Include.NON_NULL)
 	private Links links;
 
 }
