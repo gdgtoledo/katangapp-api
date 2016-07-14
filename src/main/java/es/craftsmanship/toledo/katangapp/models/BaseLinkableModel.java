@@ -7,6 +7,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  */
 public abstract class BaseLinkableModel implements LinkableModel {
 
+	/**
+	 * Public empty constructor for automatic Jackson parsing
+	 */
 	public BaseLinkableModel() {
 		links = new Links();
 	}
