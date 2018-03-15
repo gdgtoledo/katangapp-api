@@ -4,7 +4,7 @@
 
 	<groupId>es.gdg.toledo</groupId>
 	<artifactId>katangapp-api</artifactId>
-	<version>2.0.0</version>
+	<version>2.0.1-SNAPSHOT</version>
 
 	<build>
 		<plugins>
@@ -64,6 +64,6 @@
 	<scm>
 		<connection>scm:git:git@github.com:craftsmanship-toledo/katangapp-api.git</connection>
 		<developerConnection>scm:git:git@github.com:craftsmanship-toledo/katangapp-api.git</developerConnection>
-	  <tag>katangapp-api-2.0.0</tag>
+	  <tag>HEAD</tag>
   </scm>
 </project>
